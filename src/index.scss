@@ -1,0 +1,196 @@
+$primary: black;
+$secondary: white;
+
+body {
+  font: 1em "Century Gothic", Futura, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: darken($color: $secondary, $amount: 3%);
+  user-select: none;
+  > div {
+    text-align: center;
+  }
+}
+
+h1 {
+  font-size: 3.2em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.342);
+}
+
+.game-menu {
+  button {
+    margin: 0.15em;
+  }
+}
+
+.game {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  .game-board {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-bottom: 2em;
+    .square {
+      font-weight: bold;
+      height: 1.5em;
+      padding: 0;
+      text-align: center;
+      width: 1.5em;
+      text-shadow: -1px -1px 1px $secondary, 1px 1px 1px rgba(0, 0, 0, 0.582);
+    }
+    .message {
+      margin: 1em 0;
+      font-size: 1.5em;
+    }
+  }
+  .game-info {
+    .control-menu {
+      display: flex;
+      button {
+        margin: 0.09em;
+        height: 3.5em;
+        padding: 0.7em;
+        min-width: 3em;
+        font-size: 12px;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        .dropbtn {
+          min-width: 8em;
+        }
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: darken($color: $secondary, $amount: 10%);
+          min-width: 12em;
+          box-shadow: 0 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          left: -2em;
+          ul {
+            list-style: none;
+            padding: 0;
+            button {
+              min-width: 9em;
+            }
+          }
+        }
+        .show {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 0.75em solid transparent;
+  border-bottom: 0.75em solid transparent;
+  border-left: 0.75em solid rgb(0, 0, 0);
+  margin-left: 0.45em;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 0.75em solid transparent;
+  border-bottom: 0.75em solid transparent;
+  border-right: 0.75em solid rgb(0, 0, 0);
+  margin-right: 0.45em;
+  float: right;
+}
+
+button {
+  background-color: $secondary;
+  border: 2px solid $primary;
+  border-radius: 0.2em;
+  margin: 0.05em;
+  color: $primary;
+  padding: 1em;
+  font-size: 1em;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 3px 1px $primary;
+  }
+  @media not all and (hover: none) {
+    &:hover:not(.square):not(:disabled) {
+      background-color: lighten($color: $primary, $amount: 10%);
+      color: $secondary;
+    }
+    &:hover .arrow-left {
+      border-right-color: $secondary;
+    }
+    &:hover .arrow-right {
+      border-left-color: $secondary;
+    }
+  }
+  &:active:not(.square):not(:disabled) {
+    background-color: $primary;
+    color: $secondary;
+    box-shadow: 0 0 3px 1px $primary;
+  }
+  &:active .arrow-left {
+    border-right-color: $secondary;
+  }
+  &:active .arrow-right {
+    border-left-color: $secondary;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  body {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  body {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  body {
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  body {
+    font-size: 1.9em;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  body {
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 760px) and (min-height: 1000px) {
+  body {
+    font-size: 2.1em;
+  }
+}
+
+@media screen and (min-width: 760px) and (min-height: 1300px) {
+  body {
+    font-size: 2.5em;
+  }
+}
+
