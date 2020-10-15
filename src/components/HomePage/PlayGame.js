@@ -1,5 +1,6 @@
 import React from "react";
 import StartGame from "./StartGame";
+import BoxesLay from './BoxesLay';
 import MoveSection from "./MoveSection";
 import PropTypes from "prop-types";
 
@@ -115,13 +116,10 @@ class PlayGame extends React.Component {
                             gameStatus={gameStatus}
                         />
                     ) : (
-                            current.squares.map((square, index) => {
-                                return (
-                                    <button className="square" onClick={() => this.handleClick(index)}>
-                                        {square}
-                                    </button>
-                                )
-                            })
+                            <BoxesLay
+                                squares={current.squares}
+                                onClick={i => this.handleClick(i)}
+                            />
                         )}
                 </div>
                 <div className="game-info">
