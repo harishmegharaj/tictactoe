@@ -29,6 +29,15 @@ it("clicked Blocks should have text 'O'", () => {
 	expect(squares.at(1).text()).toBe("O");
 });
 
+it("button should have text 'Move #3'", () => {
+	const wrapper = renderGame();
+	const squares = wrapper.find("Blocks");
+	squares.at(0).simulate("click");
+	squares.at(1).simulate("click");
+	squares.at(2).simulate("click");
+	expect(wrapper.find(".control-menu").text()).toBe("Move #3");
+});
+
 it("button should have text 'Move #2' and Square[2] should be '' after click on left arrow", () => {
 	const wrapper = renderGame();
 	const squares = wrapper.find("Blocks");
@@ -38,6 +47,7 @@ it("button should have text 'Move #2' and Square[2] should be '' after click on 
 
 	expect(squares.at(2).text()).toBe("X");
 	wrapper.find(".arrow-left").simulate("click");
+	// expect(wrapper.find(".control-menu").text()).toBe("Move #2");
 	expect(squares.at(2).text()).toBe("");
 });
 
