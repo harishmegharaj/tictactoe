@@ -131,10 +131,10 @@ class PlayGame extends React.Component {
                         isOutOfMoves={isOutOfMoves}
                     />
                 </div>
-                <div className=''>
-                    <button className="reset" onClick={() => this.props.startNewGame()}>
-			            Reset Game
-		            </button>
+                <div>
+                    {gameStatus === "Still playing" && <button className="reset" onClick={() => this.props.startNewGame()}>
+                        Reset Game
+		            </button>}
                 </div>
             </div>
         );
