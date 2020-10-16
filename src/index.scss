@@ -88,14 +88,6 @@ h1 {
   }
 }
 
-.arrow-right {
-  width: 0;
-  height: 0;
-  border-top: 0.75em solid transparent;
-  border-bottom: 0.75em solid transparent;
-  border-left: 0.75em solid rgb(0, 0, 0);
-  margin-left: 0.45em;
-}
 
 .arrow-left {
   width: 0;
@@ -105,6 +97,11 @@ h1 {
   border-right: 0.75em solid rgb(0, 0, 0);
   margin-right: 0.45em;
   float: right;
+}
+
+.reset {
+  padding: 0px;
+  margin-top: 32px;
 }
 
 button {
